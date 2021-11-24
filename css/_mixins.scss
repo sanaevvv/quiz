@@ -1,0 +1,172 @@
+@import 'valiables';
+
+// レスポンシブ対応
+@mixin mq($breakPoint) {
+  @media screen and(max-width:#{map-get($breakPoints, $breakPoint)}) {
+    @content;
+  }
+}
+
+// ヘッダー固定
+@mixin fixed {
+  .header {
+    background-color: $main-color;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    padding: 10px;
+    @include flex;
+  }
+}
+
+// ファーストビュー画像
+@mixin fv {
+  .first-view {
+    position: relative;
+    img {
+      object-fit: cover;
+      max-height: $fv-height;
+    }
+  }
+}
+
+// マスク
+@mixin mask($bg: #000, $opacity: 0.5) {
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: $bg;
+    opacity: $opacity;
+    z-index: 10;
+  }
+}
+
+// ボタン
+@mixin btnStyle(
+  $bg-color: $accent-color,
+  $color: $sub-color,
+  $padding: 10px 20px,
+  $font-size: 1.8rem
+) {
+  .btn {
+    background-color: $bg-color;
+    color: $color;
+    padding: $padding;
+    font-size: $font-size;
+
+    border: 2px solid $color;
+    border-radius: 9999px;
+    box-shadow: 0px 0px 16px -6px rgba(0, 0, 0, 0.6);
+  }
+}
+
+// ギャラリー
+@mixin card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+// 「 」 デザイン
+@mixin key($width: 4vw, $height: 3vw) {
+  .key {
+    position: relative;
+    padding: 50px;
+    width: fit-content;
+    margin: 0 auto;
+    &::before,
+    &::after {
+      content: '';
+      width: $width;
+      height: $height;
+      position: absolute;
+    }
+    &::before {
+      border-left: $bar-style $bar-size $bar-color;
+      border-top: $bar-style $bar-size $bar-color;
+      top: 0;
+      left: 0;
+    }
+    &::after {
+      border-right: $bar-style $bar-size $bar-color;
+      border-bottom: $bar-style $bar-size $bar-color;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}
+
+// フォントオーサム
+@mixin iconBefore($code) {
+  .icon-before {
+    position: relative;
+    &::before {
+      position:absolute;
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      content: #{'"' + $code + '"'};
+      left: 10%;
+    }
+  }
+}
+@mixin iconAfter($code) {
+  .icon-after {
+    position: relative;
+  &::after {
+    position: absolute;
+    right: 10%;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: #{'"' + $code + '"'};
+  }
+}
+}
+
+// 蛍光アンダーライン
+@mixin line {
+  .line {
+    background: linear-gradient(transparent 80%, $main-color 0%);
+    display: inline-block;
+    line-height: 1;
+    font-weight: bold;
+  }
+}
+
+// 見出しボーダー
+@mixin s-line {
+  .s-line {
+    position: relative;
+    &::after {
+      content: '';
+      background: $main-color;
+      width: 32px;
+      height: 2px;
+      position: absolute;
+      bottom: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+// 見出しアンダーライン
+
+.bottom_border {
+  text-align: center;
+  position: relative;
+  margin-bottom: 1em;
+  &:before {
+    content: ' ';
+    position: absolute;
+    left: 50%;
+    bottom: -15%;
+    width: 30px;
+    height: 2px;
+    transform: translateX(-50%);
+    background-color: #000;
+    border-radius: 1px;
+  }
+}

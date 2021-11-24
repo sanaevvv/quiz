@@ -1,0 +1,68 @@
+@charset "UTF-8";
+@import 'mixins';
+@import 'main';
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+}
+
+img {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+a {
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  color: #333;
+  &:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+}
+
+section {
+  padding-top: 5vh;
+}
+
+.sp-br {
+  display: none;
+  @include mq(sp) {
+    display: block;
+  }
+}
+.tablet-br {
+  display: none;
+  @include mq(tablet) {
+    display: block;
+  }
+}
+
+.container {
+  max-width: 1100px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+// フォント、テキスト系
+.title {
+  font-size: clamp(18px, calc(18px + 1.5vw), 34px);
+  font-weight: bold;
+  text-align: center;
+  padding: 50px 10px;
+}
