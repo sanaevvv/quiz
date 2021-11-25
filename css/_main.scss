@@ -164,6 +164,8 @@
   align-items: center;
   @include mq(tablet) {
     grid-template-columns: 1fr;
+    padding: 20px 0;
+    gap: 10px;
   }
 }
 .care-grid-ttl {
@@ -172,6 +174,21 @@
   font-size: 2rem;
   @include mq(tablet) {
     order:1;
+  }
+}
+.img-wrapper1{
+  @include mq(tablet) {
+    order:2;
+  }
+}
+.care-grid-txt{
+   @include mq(tablet) {
+    order:3;
+  }
+}
+.img-wrapper2{
+   @include mq(tablet) {
+    order:4;
   }
 }
 
