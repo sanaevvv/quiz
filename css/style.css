@@ -354,6 +354,14 @@
   text-align: center;
 }
 
+@media screen and (max-width: 768px) {
+  .chain-store-grid {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
 .recommend-wrapper {
   position: relative;
   padding: 1rem 2rem;

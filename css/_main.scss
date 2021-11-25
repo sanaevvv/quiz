@@ -236,6 +236,11 @@
   grid-template-columns: 1fr 1fr;
   gap: 20px;
   text-align: center;
+  @include mq(tablet) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
 }
 
 .recommend-wrapper {
