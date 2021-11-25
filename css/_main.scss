@@ -236,6 +236,9 @@
   background: #d8ecf5;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  @include mq(tablet) {
+    grid-template-columns: 1fr;
+  }
 
   &:before {
     font-family: 'Font Awesome 5 Free';
