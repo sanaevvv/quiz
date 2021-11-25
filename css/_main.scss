@@ -191,6 +191,16 @@
     order:4;
   }
 }
+.care-grid-txt1{
+   @include mq(tablet) {
+    order:1;
+  }
+}
+.care-grid-txt2{
+   @include mq(tablet) {
+    order:3;
+  }
+}
 
 .total-care-wrapper {
   text-align: center;
