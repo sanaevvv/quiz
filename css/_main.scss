@@ -8,7 +8,8 @@
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
-  text-shadow: 0 0 6px #6969699e;
+  text-shadow: 1px 2px 3px #0a0a0afa;
+  font-size: 120%;
   @include mq(tablet) {
     height: 1300px;
   }
@@ -21,92 +22,137 @@
     width: 100%;
   }
 
-  .center-top {
+  .circle {
     position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 110;
-    color: #fff;
-    font-weight: bold;
-    background-color: #f7882f;
-
-    padding: 20px;
-    border-radius: 10px;
-    width: 200px;
-    text-align: center;
-    @include mq(tablet) {
-      left: 50%;
-      transform: translateX(-50%);
-    }
-  }
-
-  .center-bottom {
-    position: absolute;
-    left: 50%;
-    bottom: 20%;
-    transform: translateX(-50%);
-    z-index: 110;
-    color: #fff;
-    font-weight: bold;
-    background-color: #57bc90;
-    padding: 20px;
-    width: 200px;
-    text-align: center;
-    border-radius: 10px;
-    @include mq(tablet) {
-      left: 50%;
-      bottom: 0;
-      transform: translateX(-50%);
-    }
-  }
-  .left-center {
-    position: absolute;
-    left: 20%;
     top: 50%;
-    transform: translateY(-50%);
-    z-index: 110;
-    color: #fff;
-    font-weight: bold;
-    background-color: #77c9d4;
-    padding: 20px;
-    width: 200px;
-    text-align: center;
-    border-radius: 10px;
-    @include mq(tablet) {
-      top: 50%;
-      transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 60vh;
+    border-radius: 50%;
+    border: 5px solid gray;
+    position: relative;
+    .appeal {
+      li {
+        &::after {
+          content: '';
+          display: block;
+          background-color: #000;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+          transform: skew(-15deg);
+          border-top-right-radius: 30px;
+        }
+      }
+      .center-top {
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 110;
+        color: #fff;
+        font-weight: bold;
+        background-color: orangered;
+        padding: 20px;
+        border-radius: 10px;
+        width: 230px;
+        text-align: center;
+        &::first-letter {
+          font-size: 120%;
+          background-color: orangered;
+          padding: 8px;
+          border-radius: 9999px;
+          line-height: 1.9;
+        }
+        @include mq(tablet) {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+
+      .center-bottom {
+        position: absolute;
+        left: 50%;
+        bottom: -30px;
+        transform: translateX(-50%);
+        z-index: 110;
+        color: #fff;
+        font-weight: bold;
+        background-color: #03ab62;
+        padding: 20px;
+        width: 230px;
+        text-align: center;
+        border-radius: 10px;
+        &::first-letter {
+          font-size: 120%;
+          background-color: #03ab62;
+          padding: 8px;
+          border-radius: 9999px;
+          line-height: 1.9;
+        }
+        @include mq(tablet) {
+          left: 50%;
+          bottom: 0;
+          transform: translateX(-50%);
+        }
+      }
+      .left-center {
+        position: absolute;
+        left: -80px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 110;
+        color: #fff;
+        font-weight: bold;
+        background-color: #05bed7;
+        padding: 20px;
+        width: 230px;
+        text-align: center;
+        border-radius: 10px;
+        &::first-letter {
+          font-size: 120%;
+          background-color: #05bed7;
+          padding: 8px;
+          border-radius: 9999px;
+          line-height: 1.9;
+        }
+        @include mq(tablet) {
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+      .right-center {
+        position: absolute;
+        right: -80px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 110;
+        color: #fff;
+        font-weight: bold;
+        background-color: #ffad17;
+        padding: 20px;
+        width: 230px;
+        text-align: center;
+        border-radius: 10px;
+        &::first-letter {
+          font-size: 120%;
+          background-color: #ffad17;
+          padding: 8px;
+          border-radius: 9999px;
+          line-height: 1.9;
+        }
+        @include mq(tablet) {
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
     }
   }
-  .right-center {
-    position: absolute;
-    right: 20vw;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 110;
-    color: #fff;
-    font-weight: bold;
-    background-color: #f7c331;
-    padding: 20px;
-    width: 200px;
-    text-align: center;
-    border-radius: 10px;
-    @include mq(tablet) {
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-  }
-}
-.circle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 40vw;
-  height: 60vh;
-  border-radius: 50%;
-  border: 5px solid gray;
 }
 
 .care-grid {
@@ -422,6 +468,26 @@ iframe {
   z-index: 1000;
   background-color: #ede4d3;
   border-bottom: 2px solid $accent-color;
+  .header-grid {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: center;
+    height: 50px;
+    // @media (max-width: 768px) {
+    //   display: grid;
+    //   grid-template-columns: 80px 1fr;
+    // }
+    @include mq(tablet) {
+      grid-template-columns: 80px 1fr;
+      gap: 10px;
+    }
+    .nav {
+      justify-self: end;
+      @include mq(tablet) {
+        font-size: 80%;
+      }
+    }
+  }
 }
 .first-view {
   padding-top: 50px;
@@ -447,16 +513,13 @@ iframe {
     color: $accent-color;
     font-weight: bold;
   }
-}
-.header-grid {
-  display: grid;
-  grid-template-columns: 150px 1fr;
-  align-items: center;
-  height: 50px;
-  .nav {
-    justify-self: end;
+  @include mq {
+    li a {
+      font-size: 80%;
+    }
   }
 }
+
 .improve-txt {
   text-align: center;
   font-size: 120%;

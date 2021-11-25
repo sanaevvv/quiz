@@ -31,7 +31,7 @@
 }
 
 // マスク
-@mixin mask($bg: #000, $opacity: 0.5) {
+@mixin mask($bg: #000, $opacity: 0.7) {
   &::after {
     content: '';
     width: 100%;
@@ -63,6 +63,8 @@
     box-shadow: 0px 0px 16px -6px rgba(0, 0, 0, 0.6);
   }
 }
+
+
 
 // ギャラリー
 @mixin card {
