@@ -11,7 +11,7 @@
   text-shadow: 1px 2px 3px #0a0a0afa;
   font-size: 120%;
   @include mq(tablet) {
-    height: 1300px;
+    height: 1000px;
   }
   @include mask(#fff);
 
@@ -32,6 +32,11 @@
     border-radius: 50%;
     border: 5px solid gray;
     position: relative;
+    @include mq(tablet) {
+      top: 60%;
+      width: 300px;
+      height: 500px;
+    }
     .appeal {
       li {
         &::after {
@@ -96,7 +101,6 @@
         }
         @include mq(tablet) {
           left: 50%;
-          bottom: 0;
           transform: translateX(-50%);
         }
       }
@@ -121,8 +125,8 @@
           line-height: 1.9;
         }
         @include mq(tablet) {
-          top: 50%;
-          transform: translateY(-50%);
+          top: 35%;
+          left: -10%;
         }
       }
       .right-center {
@@ -146,9 +150,8 @@
           line-height: 1.9;
         }
         @include mq(tablet) {
-          right: 0;
-          top: 50%;
-          transform: translateY(-50%);
+          right: -15%;
+          top: 65%;
         }
       }
     }
@@ -159,11 +162,17 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
+  @include mq(tablet) {
+    grid-template-columns: 1fr;
+  }
 }
 .care-grid-ttl {
   font-weight: bold;
   justify-self: center;
   font-size: 2rem;
+  @include mq(tablet) {
+    order:1;
+  }
 }
 
 .total-care-wrapper {
@@ -274,10 +283,11 @@
   position: relative;
   @include mask(#fff);
   @include mq(tablet) {
-    height: 1300px;
+    height: 500px;
   }
   .concept-wrapper {
     position: absolute;
+    width: 90%;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -473,19 +483,12 @@ iframe {
     grid-template-columns: 150px 1fr;
     align-items: center;
     height: 50px;
-    // @media (max-width: 768px) {
-    //   display: grid;
-    //   grid-template-columns: 80px 1fr;
-    // }
     @include mq(tablet) {
       grid-template-columns: 80px 1fr;
       gap: 10px;
     }
     .nav {
       justify-self: end;
-      @include mq(tablet) {
-        font-size: 80%;
-      }
     }
   }
 }
@@ -509,14 +512,17 @@ iframe {
   text-align: center;
   align-items: center;
   gap: 20px;
-  li a:not(.nav-contact) {
-    color: $accent-color;
-    font-weight: bold;
+  @include mq(tablet) {
+    gap: 8px;
   }
-  @include mq {
-    li a {
-      font-size: 80%;
-    }
+}
+li a:not(.nav-contact) {
+  color: $accent-color;
+  font-weight: bold;
+}
+@include mq(tablet) {
+  li a {
+    font-size: 80%;
   }
 }
 
@@ -546,6 +552,7 @@ iframe {
   box-shadow: 0 2px 3px #a1be95;
   word-break: keep-all;
   @include mq(tablet) {
-    padding: 5px 13px;
+    font-size: 70%;
+    padding: 5px 10px;
   }
 }
