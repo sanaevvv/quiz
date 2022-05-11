@@ -167,12 +167,14 @@
       align-items: center;
       @include mq(tablet){
         padding-left: 70px;
-        padding-right:0;
-        width: 94%;
+        padding-right: 35px;
+        width: 90%;
+        line-height: 1.5;
       }
       @include mq(sp){
-        padding: 10px;
+        padding: 10px 30px;
         padding-left: 60px;
+
       }
     }
   }
@@ -269,9 +271,9 @@
 .bg-pink{
   background-color: $pink-color;
   display: inline-block;
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
   border-radius: 50%;
   color: #fff;
   font-size: 3rem;
@@ -313,8 +315,11 @@
   bottom: 5px;
   z-index: 30;
   @include mq(tablet){
-    max-width: 100%;
+    max-width: 20%;
     bottom:0;
+  }
+  @include mq(sp){
+    max-width: 15%;
   }
 }
 

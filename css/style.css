@@ -176,11 +176,12 @@
       @media screen and (max-width: 768px) {
         .q-btn-wrapper button .q-btn-txt {
           padding-left: 70px;
-          padding-right: 0;
-          width: 94%; } }
+          padding-right: 35px;
+          width: 90%;
+          line-height: 1.5; } }
       @media screen and (max-width: 480px) {
         .q-btn-wrapper button .q-btn-txt {
-          padding: 10px;
+          padding: 10px 30px;
           padding-left: 60px; } }
 
 .bg-orange {
@@ -265,9 +266,9 @@
 .bg-pink {
   background-color: #ff80bc;
   display: inline-block;
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
   border-radius: 50%;
   color: #fff;
   font-size: 3rem;
@@ -308,8 +309,11 @@
   z-index: 30; }
   @media screen and (max-width: 768px) {
     .finger-doll {
-      max-width: 100%;
+      max-width: 20%;
       bottom: 0; } }
+  @media screen and (max-width: 480px) {
+    .finger-doll {
+      max-width: 15%; } }
 
 .answer-head {
   position: absolute;

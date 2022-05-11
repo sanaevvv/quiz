@@ -153,18 +153,18 @@ const clickHandler = (e) => {
 // })
 
 // カウントダウン
-window.onload = function () {
-  let count = 15;
-  function timer(){
-    if (count >= 0) {
-      document.getElementById("timer").textContent = count
-      count--;
-    } else {
-      location.href = "http://localhost:5500/quiz/answer.html"
-    }
-  }
-  setInterval(timer, 1000);
- }
+// window.onload = function () {
+//   let count = 15;
+//   function timer(){
+//     if (count >= 0) {
+//       document.getElementById("timer").textContent = count
+//       count--;
+//     } else {
+//       location.href = "http://localhost:5500/quiz/answer.html"
+//     }
+//   }
+//   setInterval(timer, 1000);
+//  }
 
 //  次のクイズへ
 const nextQuiz = () => {
