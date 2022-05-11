@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- リセットCSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <title>quiz</title>
+</head>
+
+<body>
+  <main class="start container">
+    <picture>
+      <source media="(max-width: 768px)" srcset="../img/base_sp.png" height="">
+      <source media="(min-width: 769px)" srcset="../img/base_pc.png" height="">
+      <img src="../img/base_pc.png" alt="">
+    </picture>
+
+
+    <div class="answer-head">
+      <p class="answer-title" id="answer-num"></p>
+      <p class="answer"><span class="bg-pink answer-bg-pink">C</span><span class="answer-text">投票所の人に聞いて大丈夫なら使える</span></p>
+    </div>
+
+
+    <div class="answer-body">
+      <img src="../img/more.png" alt="">
+      <p class="answer-body-text" id="answer-text"></p>
+    </div>
+
+    <div class="answer-foot">
+      <div>
+        <img src="../img/answer_town.png" width="350" alt="">
+      </div>
+      <div>
+        <img src="../img/answer_post_box.png" alt="">
+      </div>
+    </div>
+
+    <button class="next_quiz_btn" id="next_quiz_btn">
+      <img src="../img/next_quiz_btn.png" alt="">
+    </button>
+  </main>
+
+<script src="app.js"></script>
+</body>
+
+</html>

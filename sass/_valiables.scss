@@ -1,0 +1,16 @@
+//カラー指定
+$main-color: #0260C3;
+$sub-color: #03056c;
+$accent-color: #53a022;
+$pink-color: #ff80bc;
+
+// メディアクエリ
+$breakPoints: (
+  'pc': '1280px',
+  'tablet-wide': '812px',
+  'tablet': '768px',
+  'sp-wide': '608px',
+  'sp': '480px',
+) !default;
+
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- リセットCSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <title>quiz</title>
+</head>
+
+<body>
+  <main class="start container" id="main">
+    <picture>
+      <source media="(max-width: 768px)" srcset="../img/base_sp.png" height="">
+      <source media="(min-width: 769px)" srcset="../img/base_pc.png" height="">
+      <img src="../img/base_pc.png" alt="">
+
+      <!-- 残り時間カウント -->
+      <div class="rest-time">
+        <p>残り<span class="bg-pink" id="timer">15</span>秒</p>
+      </div>
+    </picture>
+
+    <!-- 質問 -->
+    <div class="question">
+      <p class="question-title">第<span id="id"></span>問</p>
+      <p class="question-content" id="js-question"></p>
+    </div>
+
+    <!-- 回答 -->
+    <div class="quiz-title">
+      <div class="q-btn-wrapper">
+
+        <button><span class="q-btn-head">A</span><span class="q-btn-txt bg-orange" id="A"></span></button>
+
+        <button><span class="q-btn-head">B</span><span class="q-btn-txt bg-green" id="B"></span></button>
+
+        <button><span class="q-btn-head">C</span><span class="q-btn-txt bg-purple" id="C"></span></button>
+
+      </div>
+    </div>
+
+    <div class="finger-doll"><img src="../img/finger_doll.png" alt=""></div>
+  </main>
+  <script src="app.js"></script>
+</body>
+
+</html>
