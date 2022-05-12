@@ -7,20 +7,20 @@ const quiz = [
       B: "必要な手続きをした人しかダメ",
       C: "投票所の人に聞いて大丈夫なら使える",
     },
-    correct: "C",
+    correct: { C: "投票所の人に聞いて大丈夫なら使える"},
     explanation: "投票所備えつけの鉛筆を必ず使わなければいけないわけではありません。ボールペンはインクがにじむ可能性があるので、鉛筆かシャープペンシルの使用を推奨しています。感染症対策で、 使い捨てできるクリップペンシルプラスチックの軸の先に鉛筆の芯がついたものを導入する自治体もあります。??\n#マイ鉛筆で投票 #実は持っていけるマイ鉛筆 #投票所の感染症対策"
   },
   {
     id: "2",
-    question: '投票用\"紙\"はフツーの紙ではなく、実はユポという合成紙で作られています。すごい特徴とは？',
+    question: '多くの選挙の投票用\"紙\"はフツーの紙ではなく、実は合成紙で作られています。そのすごい特徴とは？',
     answers: {
       A: "光にかざすと文字が浮き出る",
       B: "プラスチックとしてリサイクルできる",
       C: "火をつけても燃えない"
     },
-    correct: "B",
+    correct: { B : "プラスチックとしてリサイクルできる"},
 
-    explanation: "使い終わった投票用紙は、プラスチック製品としてリサイクルされうちわ、投票所の足元に引く養生シート、ポスター掲示板などに生まれ変わっています。また、ユポで作られた投票用紙は折り畳んでも投票箱の中で自然に開くので開票作業が スムーズに行えます。しっとり滑らかな書き心地をぜひ投票所でお試しください。\n#投票用紙のナゾ #投票用紙が大変身 #極上の書き味"
+    explanation: "使い終わった投票用紙は、プラスチック製品としてリサイクルされうちわ、投票所の足元に引く養生シート、ポスター掲示板などに生まれ変わっています。また、投票用紙は折り畳んでも投票箱の中で自然に開くので開票作業がスムーズに行えます。しっとり滑らかな書き心地をぜひ投票所でお試しください。\n#投票用紙のナゾ #投票用紙が大変身 #極上の書き味"
   },
   {
     id: "3",
@@ -30,9 +30,9 @@ const quiz = [
       B: "ツムギさんは入れる",
       C: "２人とも入れる"
     },
-    correct: "A",
+    correct: { A: "２人とも入れない"},
 
-    explanation: "公職選挙法の改正で平成２８年から、選挙人が投票所に同伴できる子どもの範囲が「幼児」から「１８ 歳未満」に拡大されました。早い段階から投票所の雰囲気に触れてもらい 一票の大切さを学んでもらおうというものです。 ただし、大声で騒いだり、他の人の投票をのぞき見したりはしないでくださいね。\n＃１８歳未満でも入れるよ ＃親と一緒に行ってみた ＃一票の大切さを学ぼう"
+    explanation: "公職選挙法の改正で平成２８年から、選挙人が投票所に同伴できる子どもの範囲が「幼児」から「１８ 歳未満」に拡大されました。早い段階から投票所の雰囲気に触れてもらい 一票の大切さを学んでもらおうというものです。 ただし、大声で騒いだり、他の人の投票をのぞき見したりはしないでくださいね。\n#１８歳未満でも入れるよ ＃親と一緒に行ってみた ＃一票の大切さを学ぼう"
   },
   {
     id: "4",
@@ -42,9 +42,9 @@ const quiz = [
       B: "オープンカー",
       C: "セグウェイ"
     },
-    correct: "A",
+    correct: { A: "船" },
 
-    explanation: "海に囲まれた島々では、自動車のほか「船舶」で選挙運動をすることもあります。実は東京都墨田区でも、川沿いに住宅が立ち並ぶエリアでは候補者が船上からアピールすることも。また、同じ車でもオープンカーでの選挙運動は公職選挙法で認められていません。\n＃選挙カーならぬ\"選挙船\" ＃東京でも見られるよ ＃選挙っておもしろい"
+    explanation: "海に囲まれた島々では、自動車のほか「船舶」で選挙運動をすることもあります。実は東京都墨田区でも、川沿いに住宅が立ち並ぶエリアでは候補者が船上からアピールすることも。また、同じ車でもオープンカーでの選挙運動は公職選挙法で認められていません。\n#車だけじゃなかった ＃東京でも見られるよ ＃選挙っておもしろい"
   },
   {
     id: "5",
@@ -54,7 +54,7 @@ const quiz = [
       B: "電子国家 エストニア",
       C: "GAFA を生み出した アメリカ"
     },
-    correct: "B",
+    correct: { B : "電子国家 エストニア"},
 
     explanation: "人口約130万人のエストニアは、行政サービスのほとんどが電子化された、まさに電子政府の国。2005年に世界で初めて全国規模の選挙でネット投票を実施し、2019年の国会議員選挙では全投票の43.8%が電子投票システムによって投票されました。ちなみに、日本でも人工知能（AI）などを活用した国の特区「スーパーシティ構想」で、「インターネット投票」の実施を目標に掲げている自治体もあります。\n#ネット選挙 ＃便利そう ＃世界で唯一"
   }
@@ -64,24 +64,23 @@ const quizLength = quiz.length;
 let quizIndex = 0;
 let score = 0;
 
-// document.getElementById('answer-text').textContent= quiz[quizIndex].explanation;
+// 解説画面表示
+document.getElementById('js-answer-text').textContent = Object.values(quiz[quizIndex].correct);
+document.getElementById('js-answer').textContent = Object.keys(quiz[quizIndex].correct);
+document.getElementById('answer-text').textContent = quiz[quizIndex].explanation;
 
 const setUpQuiz = () => {
-  console.log(quiz);
-  // 質問を表示する
   document.getElementById('id').textContent = quiz[quizIndex].id;
   document.getElementById('js-question').textContent = quiz[quizIndex].question;
 
-  // 回答を表示する
   const btnText = document.getElementsByClassName('q-btn-txt')
   const answer = quiz[quizIndex].answers
-
   btnText[0].textContent = answer.A;
   btnText[1].textContent = answer.B;
   btnText[2].textContent = answer.C;
 }
-
 setUpQuiz();
+
 
 // ○×要素追加
 const addCircle = () => {
@@ -99,11 +98,9 @@ const addCross = () => {
 }
 
 
-
 const clickHandler = (e) => {
 
-
-  if (quiz[quizIndex].correct === e.target.id) {
+  if (Object.keys(quiz[quizIndex].correct) === e.target.id) {
     const music= new Audio('../sound/Quiz-Correct_Answer02-1.mp3');
     addCircle();
     music.volume = .1;
@@ -117,18 +114,7 @@ const clickHandler = (e) => {
     music.play();
   }
   setTimeout(() => location.href = "http://localhost:5500/quiz/answer.html", 1500);
-
 }
-
-
-
-// quizIndex++;
-
-    // if (quizIndex < quizLength) {
-    //   setUpQuiz();
-    // } else {
-    //   window.alert("お疲れ様でした！");
-    // }
 
  // クリックしたら正誤判定する
   const btn = document.getElementsByTagName('button')
@@ -145,32 +131,49 @@ const clickHandler = (e) => {
     clickHandler(e);
   })
 
-// document.getElementById(next_quiz_btn).addEventListener('click', () => {
-//   quizIndex++;
-//   if (quizIndex < quizLength) {
-//     setUpQuiz();
-//   }
-// })
 
 // カウントダウン
-// window.onload = function () {
-//   let count = 15;
-//   function timer(){
-//     if (count >= 0) {
-//       document.getElementById("timer").textContent = count
-//       count--;
-//     } else {
-//       location.href = "http://localhost:5500/quiz/answer.html"
-//     }
-//   }
-//   setInterval(timer, 1000);
-//  }
+window.onload = function () {
+  let count = 15;
+  function timer(){
+    if (count >= 0) {
+      document.getElementById("timer").textContent = count
+      count--;
+    } else {
+      location.href = "http://localhost:5500/quiz/answer.html"
+    }
+  }
+  setInterval(timer, 1000);
+}
+
 
 //  次のクイズへ
-const nextQuiz = () => {
-  quizIndex++;
+const nextClickHandler = () => {
+    quizIndex++;
   if (quizIndex < quizLength) {
     setUpQuiz();
+  } else {
+    location.href = "http://localhost:5500/quiz/point.html";
+    document.getElementById("score").textContent = `${score} 問正解！`;
+    switch (score) {
+      case 0:
+        document.getElementById("comment").textContent = "残念・・・もう一度頑張ろう！";
+        break;
+      case 1:
+        document.getElementById("comment").textContent = "頑張ろう！何回もチャレンジだね！";
+        break;
+      case 2:
+        document.getElementById("comment").textContent = "もう一度チャレンジしよう！";
+        break;
+      case 3:
+        document.getElementById("comment").textContent = "惜しい！あともう一息だよ";
+        break;
+      case 4:
+        document.getElementById("comment").textContent = "すごい！上出来だね！";
+        break;
+      case 5:
+        document.getElementById("comment").textContent = "素晴らしい！パーフェクト！";
+    }
   }
 }
-document.getElementById('next_quiz_btn').addEventListener('click', nextQuiz);
+document.getElementById('next_quiz_btn').addEventListener('click', nextClickHandler);
