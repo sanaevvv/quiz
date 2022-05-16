@@ -138,13 +138,12 @@ const clickHandler = (e) => {
     music.volume = .1;
     music.play();
   }
-  setTimeout(() => location.href = "http://localhost:5500/quiz/answer.html?quizIndex=" + quizIndex+"&score="+score, 1500);
+  setTimeout(() => location.href = "https://sanaevvv.github.io/quiz/answer.html?quizIndex=" + quizIndex+"&score="+score, 1500);
 }
 
  // クリックしたら正誤判定する
 const btn = document.getElementsByTagName('button')
-
-if (window.location.pathname === '/quiz/question.html') {
+if (window.location.pathname.includes('/quiz/question.html')) {
 
   btn[0].addEventListener('click', (e) => {
     clickHandler(e);
@@ -171,7 +170,7 @@ window.onload = function () {
           count--;
         }
       } else {
-        location.href = "http://localhost:5500/quiz/answer.html?quizIndex=" + quizIndex + "&score=" + score;
+        location.href = "https://sanaevvv.github.io/quiz/answer.html?quizIndex=" + quizIndex + "&score=" + score;
       }
     }
     setInterval(timer, 1000);
@@ -183,9 +182,9 @@ const nextClickHandler = () => {
   quizIndex++;
   if (quizIndex < quizLength) {
     setUpQuiz();
-    location.href = "http://localhost:5500/quiz/question.html?quizIndex=" + quizIndex+"&score=" + score;
+    location.href = "https://sanaevvv.github.io/quiz/question.html?quizIndex=" + quizIndex+"&score=" + score;
   }else{
-    location.href = "http://localhost:5500/quiz/point.html?score=" + score;
+    location.href = "https://sanaevvv.github.io/quiz/point.html?score=" + score;
   }
 }
 
@@ -193,26 +192,3 @@ const button = document.getElementById("next_quiz_btn");
 if (button) {
   button.addEventListener('click', nextClickHandler);
 }
-
-// if (window.location.pathname === '/quiz/point.html') {
-//   document.getElementById("score").textContent = `${score} 問正解！`;
-//   switch (score) {
-//     case 0:
-//       document.getElementById("comment").textContent = "残念・・・もう一度頑張ろう！";
-//       break;
-//     case 1:
-//       document.getElementById("comment").textContent = "頑張ろう！何回もチャレンジだね！";
-//       break;
-//     case 2:
-//       document.getElementById("comment").textContent = "もう一度チャレンジしよう！";
-//       break;
-//     case 3:
-//       document.getElementById("comment").textContent = "惜しい！あともう一息だよ";
-//       break;
-//     case 4:
-//       document.getElementById("comment").textContent = "すごい！上出来だね！";
-//       break;
-//     case 5:
-//       document.getElementById("comment").textContent = "素晴らしい！パーフェクト！";
-//   }
-// }
