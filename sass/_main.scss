@@ -385,6 +385,7 @@
     color: $sub-color;
     margin: 0 4vw;
     text-decoration: underline;
+    text-align: justify;
   }
 }
 
@@ -459,8 +460,6 @@
   padding: 15px;
   background: #fff;
   border-radius: 30px;
-  display: flex;
-  align-items: center;
   border: 2px solid $sub-color;
   &::before{
     content: '';

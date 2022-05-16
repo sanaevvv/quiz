@@ -369,7 +369,8 @@
     font-size: clamp(1.8rem, 3vw, 2.4rem);
     color: #03056c;
     margin: 0 4vw;
-    text-decoration: underline; }
+    text-decoration: underline;
+    text-align: justify; }
 
 .next_quiz_btn {
   position: absolute;
@@ -439,8 +440,6 @@
   padding: 15px;
   background: #fff;
   border-radius: 30px;
-  display: flex;
-  align-items: center;
   border: 2px solid #03056c; }
   .final-text::before {
     content: '';
@@ -542,5 +541,8 @@ button {
   z-index: 999999; }
   button:hover {
     cursor: pointer; }
+
+.white-space {
+  white-space: pre-wrap; }
 
 /*# sourceMappingURL=style.css.map */

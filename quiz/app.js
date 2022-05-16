@@ -8,7 +8,7 @@ const quiz = [
       C: "投票所の人に聞いて大丈夫なら使える",
     },
     correct: { C: "投票所の人に聞いて大丈夫なら使える"},
-    explanation: "投票所備えつけの鉛筆を必ず使わなければいけないわけではありません。ボールペンはインクがにじむ可能性があるので、鉛筆かシャープペンシルの使用を推奨しています。感染症対策で、 使い捨てできるクリップペンシルプラスチックの軸の先に鉛筆の芯がついたものを導入する自治体もあります。??\n#マイ鉛筆で投票 #実は持っていけるマイ鉛筆 #投票所の感染症対策"
+    explanation: "投票所備えつけの鉛筆を必ず使わなければいけないわけではありません。ボールペンはインクがにじむ可能性があるので、鉛筆かシャープペンシルの使用を推奨しています。感染症対策で、 使い捨てできるクリップペンシルプラスチックの軸の先に鉛筆の芯がついたものを導入する自治体もあります。\n#マイ鉛筆で投票 #実は持っていけるマイ鉛筆 #投票所の感染症対策"
   },
   {
     id: "2",
@@ -60,26 +60,52 @@ const quiz = [
   }
 ];
 
-const quizLength = quiz.length;
-let quizIndex = 0;
-let score = 0;
-
-// 解説画面表示
-document.getElementById('js-answer-text').textContent = Object.values(quiz[quizIndex].correct);
-document.getElementById('js-answer').textContent = Object.keys(quiz[quizIndex].correct);
-document.getElementById('answer-text').textContent = quiz[quizIndex].explanation;
-
-const setUpQuiz = () => {
-  document.getElementById('id').textContent = quiz[quizIndex].id;
-  document.getElementById('js-question').textContent = quiz[quizIndex].question;
-
-  const btnText = document.getElementsByClassName('q-btn-txt')
-  const answer = quiz[quizIndex].answers
-  btnText[0].textContent = answer.A;
-  btnText[1].textContent = answer.B;
-  btnText[2].textContent = answer.C;
+const url = new URL(window.location.href);
+let quizIndex = url.searchParams.get('quizIndex');
+let score = url.searchParams.get('score');
+if (!score) {
+  score = 0;
 }
-setUpQuiz();
+if (!quizIndex) {
+  quizIndex = 0;
+}
+const quizLength = quiz.length;
+
+console.log(window.location);
+
+let elmJsAnswerText = document.getElementById('js-answer-text');
+let elmJsAnswer = document.getElementById('js-answer');
+let elmAnswerText = document.getElementById('answer-text');
+
+if (elmJsAnswerText) {
+  elmJsAnswerText.textContent = Object.values(quiz[quizIndex].correct);
+}
+
+if (elmJsAnswer) {
+  elmJsAnswer.textContent = Object.keys(quiz[quizIndex].correct);
+}
+
+if (elmAnswerText) {
+  elmAnswerText.textContent = quiz[quizIndex].explanation;
+}
+
+  const setUpQuiz = () => {
+    document.getElementById('id').textContent = quiz[quizIndex].id;
+    let elmJsQuestion = document.getElementById('js-question');
+    if (elmJsQuestion) {
+      elmJsQuestion.textContent = quiz[quizIndex].question;
+    }
+    let btnText = document.getElementsByClassName('q-btn-txt');
+
+    console.log(quiz[quizIndex]);
+     if (window.location.pathname.includes('/quiz/question.html')) {
+        btnText[0].textContent = quiz[quizIndex].answers.A;
+        btnText[1].textContent = quiz[quizIndex].answers.B;
+        btnText[2].textContent = quiz[quizIndex].answers.C;
+      }
+    }
+
+ setUpQuiz();
 
 
 // ○×要素追加
@@ -99,8 +125,7 @@ const addCross = () => {
 
 
 const clickHandler = (e) => {
-
-  if (Object.keys(quiz[quizIndex].correct) === e.target.id) {
+  if (Object.keys(quiz[quizIndex].correct)[0] === e.target.id) {
     const music= new Audio('../sound/Quiz-Correct_Answer02-1.mp3');
     addCircle();
     music.volume = .1;
@@ -113,11 +138,13 @@ const clickHandler = (e) => {
     music.volume = .1;
     music.play();
   }
-  setTimeout(() => location.href = "http://localhost:5500/quiz/answer.html", 1500);
+  setTimeout(() => location.href = "http://localhost:5500/quiz/answer.html?quizIndex=" + quizIndex+"&score="+score, 1500);
 }
 
  // クリックしたら正誤判定する
-  const btn = document.getElementsByTagName('button')
+const btn = document.getElementsByTagName('button')
+
+if (window.location.pathname === '/quiz/question.html') {
 
   btn[0].addEventListener('click', (e) => {
     clickHandler(e);
@@ -130,50 +157,62 @@ const clickHandler = (e) => {
   btn[2].addEventListener('click', (e) => {
     clickHandler(e);
   })
-
+}
 
 // カウントダウン
 window.onload = function () {
   let count = 15;
-  function timer(){
-    if (count >= 0) {
-      document.getElementById("timer").textContent = count
-      count--;
-    } else {
-      location.href = "http://localhost:5500/quiz/answer.html"
-    }
-  }
-  setInterval(timer, 1000);
-}
 
+    function timer() {
+      if (count >= 0) {
+        const timer = document.getElementById("timer");
+        if (timer) {
+          document.getElementById("timer").textContent = count
+          count--;
+        }
+      } else {
+        location.href = "http://localhost:5500/quiz/answer.html?quizIndex=" + quizIndex + "&score=" + score;
+      }
+    }
+    setInterval(timer, 1000);
+
+}
 
 //  次のクイズへ
 const nextClickHandler = () => {
-    quizIndex++;
+  quizIndex++;
   if (quizIndex < quizLength) {
     setUpQuiz();
-  } else {
-    location.href = "http://localhost:5500/quiz/point.html";
-    document.getElementById("score").textContent = `${score} 問正解！`;
-    switch (score) {
-      case 0:
-        document.getElementById("comment").textContent = "残念・・・もう一度頑張ろう！";
-        break;
-      case 1:
-        document.getElementById("comment").textContent = "頑張ろう！何回もチャレンジだね！";
-        break;
-      case 2:
-        document.getElementById("comment").textContent = "もう一度チャレンジしよう！";
-        break;
-      case 3:
-        document.getElementById("comment").textContent = "惜しい！あともう一息だよ";
-        break;
-      case 4:
-        document.getElementById("comment").textContent = "すごい！上出来だね！";
-        break;
-      case 5:
-        document.getElementById("comment").textContent = "素晴らしい！パーフェクト！";
-    }
+    location.href = "http://localhost:5500/quiz/question.html?quizIndex=" + quizIndex+"&score=" + score;
+  }else{
+    location.href = "http://localhost:5500/quiz/point.html?score=" + score;
   }
 }
-document.getElementById('next_quiz_btn').addEventListener('click', nextClickHandler);
+
+const button = document.getElementById("next_quiz_btn");
+if (button) {
+  button.addEventListener('click', nextClickHandler);
+}
+
+// if (window.location.pathname === '/quiz/point.html') {
+//   document.getElementById("score").textContent = `${score} 問正解！`;
+//   switch (score) {
+//     case 0:
+//       document.getElementById("comment").textContent = "残念・・・もう一度頑張ろう！";
+//       break;
+//     case 1:
+//       document.getElementById("comment").textContent = "頑張ろう！何回もチャレンジだね！";
+//       break;
+//     case 2:
+//       document.getElementById("comment").textContent = "もう一度チャレンジしよう！";
+//       break;
+//     case 3:
+//       document.getElementById("comment").textContent = "惜しい！あともう一息だよ";
+//       break;
+//     case 4:
+//       document.getElementById("comment").textContent = "すごい！上出来だね！";
+//       break;
+//     case 5:
+//       document.getElementById("comment").textContent = "素晴らしい！パーフェクト！";
+//   }
+// }
