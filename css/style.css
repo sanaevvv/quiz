@@ -366,6 +366,9 @@
   right: 3%;
   z-index: 10;
   text-align: left; }
+  @media screen and (max-width: 480px) {
+    .answer-body {
+      top: 54%; } }
   .answer-body img {
     width: min(50%, 300px); }
   .answer-body .answer-body-text, .answer-body .answer-body-text2 {
@@ -397,7 +400,7 @@
 
 .next_quiz_btn {
   position: absolute;
-  bottom: 10%;
+  bottom: 13%;
   width: 300px;
   left: 50%;
   transform: translateX(-50%); }
