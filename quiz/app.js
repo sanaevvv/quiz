@@ -97,7 +97,7 @@ if (elmAnswerText2) {
 }
 
 const setUpQuiz = () => {
-  // document.getElementById('id').textContent = quiz[quizIndex].id;
+  document.getElementById('id').textContent = quiz[quizIndex].id;
   let elmJsQuestion = document.getElementById('js-question');
   if (elmJsQuestion) {
     elmJsQuestion.textContent = quiz[quizIndex].question;
@@ -192,7 +192,6 @@ window.onload = function () {
 //  次のクイズへ
 const nextClickHandler = () => {
   quizIndex++;
-  document.getElementById('id').textContent = quiz[quizIndex].id;
 
   if(quizIndex < quizLength) {
     setUpQuiz();
