@@ -112,7 +112,9 @@ const setUpQuiz = () => {
 
   if (quiz.pop()) {
     const t = document.getElementById("next_quiz_btn_img");
-    t.src = "../img/point.png";
+    if (t) {
+      t.src = "../img/point.png";
+  }
   }
 }
  setUpQuiz();
