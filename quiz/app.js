@@ -110,7 +110,7 @@ const setUpQuiz = () => {
     btnText[2].textContent = quiz[quizIndex].answers.C;
   }
 
-   if (quizLength === quizIndex + 1) {
+   if (quizLength === quiz[quizIndex].id) {
     let t = document.getElementById("next_quiz_btn_img");
     if (t) {
       t.src = "../img/point.png";
@@ -172,7 +172,7 @@ if (window.location.pathname.includes('/quiz/question.html')) {
 
 // カウントダウン
 window.onload = function () {
-  let count = 15;
+  // let count = 15;
 
     function timer() {
       if (count >= 0) {

@@ -212,12 +212,15 @@
     .question {
       width: 95%; } }
   .question .question-title {
+    font-weight: bold;
     width: max-content;
     padding: 20px 50px 5px;
     margin: 0 auto -5px;
     position: relative;
-    font-size: 3.6rem;
-    color: #0260C3; }
+    font-size: 3.8rem;
+    color: #0260C3;
+    -webkit-text-stroke: 1.5px #cdeefd;
+    text-shadow: 1px 3px 2px #0000009c; }
     .question .question-title::before {
       content: '';
       position: absolute;
