@@ -175,7 +175,7 @@
       left: 4vw;
       width: 98%;
       font-size: clamp(2rem, 3vw, 2.4rem);
-      height: 80px;
+      height: 70px;
       display: flex;
       align-items: center; }
       @media screen and (max-width: 768px) {
