@@ -110,7 +110,7 @@ const setUpQuiz = () => {
     btnText[2].textContent = quiz[quizIndex].answers.C;
   }
 
-  if (quiz.pop()) {
+  if (quizLength === quizIndex + 1) {
     const t = document.getElementById("next_quiz_btn_img");
     if (t) {
       t.src = "../img/point.png";
