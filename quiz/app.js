@@ -109,6 +109,13 @@ const setUpQuiz = () => {
     btnText[1].textContent = quiz[quizIndex].answers.B;
     btnText[2].textContent = quiz[quizIndex].answers.C;
   }
+
+   if (quizLength === quizIndex + 1) {
+    let t = document.getElementById("next_quiz_btn_img");
+    if (t) {
+      t.src = "../img/point.png";
+    }
+  }
 }
  setUpQuiz();
 
@@ -185,14 +192,8 @@ window.onload = function () {
 //  次のクイズへ
 const nextClickHandler = () => {
   quizIndex++;
-  if (quizLength === quizIndex + 1) {
-    const t = document.getElementById("next_quiz_btn_img");
-    if (t) {
-      t.src = "../img/point.png";
-    }
-  }
 
-  if (quizIndex < quizLength) {
+  if(quizIndex < quizLength) {
     setUpQuiz();
     location.href = "https://sanaevvv.github.io/quiz/quiz/question.html?quizIndex=" + quizIndex + "&score=" + score;
 
