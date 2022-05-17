@@ -184,17 +184,16 @@ window.onload = function () {
 
 //  次のクイズへ
 const nextClickHandler = () => {
-  console.log(quizIndex);
   quizIndex++;
-
-  if (quizIndex < quizLength) {
-    setUpQuiz();
-    if (quizLength === quizIndex + 1) {
+  if (quizLength === quizIndex + 1) {
     const t = document.getElementById("next_quiz_btn_img");
     if (t) {
       t.src = "../img/point.png";
     }
   }
+
+  if (quizIndex < quizLength) {
+    setUpQuiz();
     location.href = "https://sanaevvv.github.io/quiz/quiz/question.html?quizIndex=" + quizIndex + "&score=" + score;
 
   } else {
