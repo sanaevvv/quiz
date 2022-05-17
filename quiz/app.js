@@ -1,55 +1,55 @@
 const quiz = [
-  {
-    id: "1",
-    question: 'このご時世、他の人が使った鉛筆はちょっと不安...\n\"「マイ鉛筆」\"で投票はできるの?',
-    answers: {
-      A: "投票所で用意している筆記具しかダメ",
-      B: "必要な手続きをした人しかダメ",
-      C: "投票所の人に聞いて大丈夫なら使える",
-    },
-    correct: { C: "投票所の人に聞いて大丈夫なら使える"},
-    explanation: "投票所備えつけの鉛筆を必ず使わなければいけないわけではありません。ボールペンはインクがにじむ可能性があるので、鉛筆かシャープペンシルの使用を推奨しています。感染症対策で、使い捨てできるクリップペンシルプラスチックの軸の先に鉛筆の芯がついたものを導入する自治体もあります。",
-    explanation2:"#マイ鉛筆で投票   #実は持っていけるマイ鉛筆   #投票所の感染症対策"
-  },
-  {
-    id: "2",
-    question: '多くの選挙の投票用\"紙\"はフツーの紙ではなく、実は合成紙で作られています。そのすごい特徴とは？',
-    answers: {
-      A: "光にかざすと文字が浮き出る",
-      B: "プラスチックとしてリサイクルできる",
-      C: "火をつけても燃えない"
-    },
-    correct: { B : "プラスチックとしてリサイクルできる"},
+  // {
+  //   id: "1",
+  //   question: 'このご時世、他の人が使った鉛筆はちょっと不安...\n\"マイ鉛筆\"で投票はできるの?',
+  //   answers: {
+  //     A: "投票所で用意している筆記具しかダメ",
+  //     B: "必要な手続きをした人しかダメ",
+  //     C: "投票所の人に聞いて大丈夫なら使える",
+  //   },
+  //   correct: { C: "投票所の人に聞いて大丈夫なら使える"},
+  //   explanation: "投票所備えつけの鉛筆を必ず使わなければいけないわけではありません。ボールペンはインクがにじむ可能性があるので、鉛筆かシャープペンシルの使用を推奨しています。感染症対策で、使い捨てできるクリップペンシルプラスチックの軸の先に鉛筆の芯がついたものを導入する自治体もあります。",
+  //   explanation2:"#マイ鉛筆で投票   #実は持っていけるマイ鉛筆   #投票所の感染症対策"
+  // },
+  // {
+  //   id: "2",
+  //   question: '多くの選挙の投票用\"紙\"はフツーの紙ではなく、実は合成紙で作られています。そのすごい特徴とは？',
+  //   answers: {
+  //     A: "光にかざすと文字が浮き出る",
+  //     B: "プラスチックとしてリサイクルできる",
+  //     C: "火をつけても燃えない"
+  //   },
+  //   correct: { B : "プラスチックとしてリサイクルできる"},
 
-    explanation: "使い終わった投票用紙は、プラスチック製品としてリサイクルされうちわ、投票所の足元に引く養生シート、ポスター掲示板などに生まれ変わっています。また、投票用紙は折り畳んでも投票箱の中で自然に開くので開票作業がスムーズに行えます。しっとり滑らかな書き心地をぜひ投票所でお試しください。",
-    explanation2:"#投票用紙のナゾ   #投票用紙が大変身   #極上の書き味"
-  },
-  {
-    id: "3",
-    question: '親と一緒に投票所までついてきた４歳のツムギちゃん と１７歳のハルトくん。「一緒に中に入りたいな〜」。入ることはできる？',
-    answers: {
-      A: "２人とも入れない",
-      B: "ツムギさんは入れる",
-      C: "２人とも入れる"
-    },
-    correct: { C: "２人とも入れる"},
+  //   explanation: "使い終わった投票用紙は、プラスチック製品としてリサイクルされうちわ、投票所の足元に引く養生シート、ポスター掲示板などに生まれ変わっています。また、投票用紙は折り畳んでも投票箱の中で自然に開くので開票作業がスムーズに行えます。しっとり滑らかな書き心地をぜひ投票所でお試しください。",
+  //   explanation2:"#投票用紙のナゾ   #投票用紙が大変身   #極上の書き味"
+  // },
+  // {
+  //   id: "3",
+  //   question: '親と一緒に投票所までついてきた４歳のツムギちゃん と１７歳のハルトくん。「一緒に中に入りたいな〜」。入ることはできる？',
+  //   answers: {
+  //     A: "２人とも入れない",
+  //     B: "ツムギさんは入れる",
+  //     C: "２人とも入れる"
+  //   },
+  //   correct: { C: "２人とも入れる"},
 
-    explanation: "公職選挙法の改正で平成２８年から、選挙人が投票所に同伴できる子どもの範囲が「幼児」から「１８ 歳未満」に拡大されました。早い段階から投票所の雰囲気に触れてもらい 一票の大切さを学んでもらおうというものです。 ただし、大声で騒いだり、他の人の投票をのぞき見したりはしないでくださいね。",
-    explanation2:"#１８歳未満でも入れるよ   ＃親と一緒に行ってみた   ＃一票の大切さを学ぼう"
-  },
-  {
-    id: "4",
-    question: '候補者を広くアピールする選挙カー。日本では、他にどんな乗り物で選挙運動をすることができる？',
-    answers: {
-      A: "船",
-      B: "オープンカー",
-      C: "セグウェイ"
-    },
-    correct: { A: "船" },
+  //   explanation: "公職選挙法の改正で平成28年から、選挙人が投票所に同伴できる子どもの範囲が「幼児」から「18歳未満」に拡大されました。早い段階から投票所の雰囲気に触れてもらい 一票の大切さを学んでもらおうというものです。 ただし、大声で騒いだり、他の人の投票をのぞき見したりはしないでくださいね。",
+  //   explanation2: "#18歳未満でも入れるよ #親と一緒に行ってみた ＃一票の大切さを学ぼう"
+  // },
+  // {
+  //   id: "4",
+  //   question: '候補者を広くアピールする選挙カー。日本では、他にどんな乗り物で選挙運動をすることができる？',
+  //   answers: {
+  //     A: "船",
+  //     B: "オープンカー",
+  //     C: "セグウェイ"
+  //   },
+  //   correct: { A: "船" },
 
-    explanation: "海に囲まれた島々では、自動車のほか「船舶」で選挙運動をすることもあります。実は東京都墨田区でも、川沿いに住宅が立ち並ぶエリアでは候補者が船上からアピールすることも。また、同じ車でもオープンカーでの選挙運動は公職選挙法で認められていません。",
-    explanation2:"#車だけじゃなかった   ＃東京でも見られるよ   ＃選挙っておもしろい"
-  },
+  //   explanation: "海に囲まれた島々では、自動車のほか「船舶」で選挙運動をすることもあります。実は東京都墨田区でも、川沿いに住宅が立ち並ぶエリアでは候補者が船上からアピールすることも。また、同じ車でもオープンカーでの選挙運動は公職選挙法で認められていません。",
+  //   explanation2:"#車だけじゃなかった   ＃東京でも見られるよ   ＃選挙っておもしろい"
+  // },
   {
     id: "5",
     question: 'インターネットで投票できたらいいのにな～？えっ海外にはあるの？どこの国',
@@ -96,22 +96,26 @@ if (elmAnswerText2) {
   elmAnswerText2.textContent = quiz[quizIndex].explanation2;
 }
 
-  const setUpQuiz = () => {
-    document.getElementById('id').textContent = quiz[quizIndex].id;
-    let elmJsQuestion = document.getElementById('js-question');
-    if (elmJsQuestion) {
-      elmJsQuestion.textContent = quiz[quizIndex].question;
-    }
-    let btnText = document.getElementsByClassName('q-btn-txt');
+const setUpQuiz = () => {
+  document.getElementById('id').textContent = quiz[quizIndex].id;
+  let elmJsQuestion = document.getElementById('js-question');
+  if (elmJsQuestion) {
+    elmJsQuestion.textContent = quiz[quizIndex].question;
+  }
+  let btnText = document.getElementsByClassName('q-btn-txt');
 
-    console.log(quiz[quizIndex]);
-     if (window.location.pathname.includes('/quiz/question.html')) {
-        btnText[0].textContent = quiz[quizIndex].answers.A;
-        btnText[1].textContent = quiz[quizIndex].answers.B;
-        btnText[2].textContent = quiz[quizIndex].answers.C;
-      }
-    }
+  console.log(quiz[quizIndex]);
+  if (window.location.pathname.includes('/quiz/question.html')) {
+    btnText[0].textContent = quiz[quizIndex].answers.A;
+    btnText[1].textContent = quiz[quizIndex].answers.B;
+    btnText[2].textContent = quiz[quizIndex].answers.C;
+  }
 
+  if (quizIndex === quiz.length - 1) {
+    let t = document.getElementById("next_quiz_btn_img");
+    t.src = "../img/point.png";
+  }
+}
  setUpQuiz();
 
 
@@ -186,11 +190,13 @@ window.onload = function () {
 
 //  次のクイズへ
 const nextClickHandler = () => {
+  console.log(quizIndex);
   quizIndex++;
+
   if (quizIndex < quizLength) {
     setUpQuiz();
-    location.href = "https://sanaevvv.github.io/quiz/quiz/question.html?quizIndex=" + quizIndex+"&score=" + score;
-  }else{
+    location.href = "https://sanaevvv.github.io/quiz/quiz/question.html?quizIndex=" + quizIndex + "&score=" + score;
+  } else {
     location.href = "https://sanaevvv.github.io/quiz/quiz/point.html?score=" + score;
   }
 }
