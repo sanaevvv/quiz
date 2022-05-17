@@ -101,7 +101,7 @@
 
 .q-btn-wrapper{
   position: relative;
-  height: 300px;
+  height: 260px;
   button{
     @include btnStyle;
     position: absolute;
@@ -136,9 +136,9 @@
   }
     span{
       border-radius: 50%;
-      width: 80px;
-      height: 80px;
-      line-height: 80px;
+      width: 70px;
+      height: 70px;
+      line-height: 70px;
       @include mq(tablet){
       width: 70px;
       height: 70px;

@@ -112,7 +112,7 @@
 
 .q-btn-wrapper {
   position: relative;
-  height: 300px; }
+  height: 260px; }
   .q-btn-wrapper button {
     background: transparent;
     border: none;
@@ -148,9 +148,9 @@
       bottom: 0; }
     .q-btn-wrapper button span {
       border-radius: 50%;
-      width: 80px;
-      height: 80px;
-      line-height: 80px; }
+      width: 70px;
+      height: 70px;
+      line-height: 70px; }
       @media screen and (max-width: 768px) {
         .q-btn-wrapper button span {
           width: 70px;
