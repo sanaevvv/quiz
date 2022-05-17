@@ -97,7 +97,7 @@ if (elmAnswerText2) {
 }
 
 const setUpQuiz = () => {
-  document.getElementById('id').textContent = quiz[quizIndex].id;
+  // document.getElementById('id').textContent = quiz[quizIndex].id;
   let elmJsQuestion = document.getElementById('js-question');
   if (elmJsQuestion) {
     elmJsQuestion.textContent = quiz[quizIndex].question;
@@ -196,6 +196,8 @@ const nextClickHandler = () => {
   if(quizIndex < quizLength) {
     setUpQuiz();
     location.href = "https://sanaevvv.github.io/quiz/quiz/question.html?quizIndex=" + quizIndex + "&score=" + score;
+    document.getElementById('id').textContent = quiz[quizIndex].id;
+
   } else {
     location.href = "https://sanaevvv.github.io/quiz/quiz/point.html?score=" + score;
   }
