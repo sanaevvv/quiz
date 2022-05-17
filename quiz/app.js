@@ -117,7 +117,7 @@ const setUpQuiz = () => {
     }
   }
 }
-//  setUpQuiz();
+ setUpQuiz();
 
 
 // ○×要素追加
