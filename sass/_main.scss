@@ -382,13 +382,33 @@
   }
   .answer-body-text{
     background: #fff;
-    padding: 20px;
+    padding: 20px 20px 12vh 20px;
     border-radius: 5px;
     font-size: clamp(1.8rem, 3vw, 2.4rem);
     color: $sub-color;
     margin: 0 4vw;
     text-decoration: underline;
     text-align: justify;
+    @include mq(tablet-wide){
+      padding-bottom: 12vh;
+    }
+  }
+  .answer-body-text2{
+   @extend.answer-body-text;
+   text-decoration: none;
+   background:linear-gradient(transparent 0,#d9f649 0);
+   display: inline-block;
+   position: absolute;
+   bottom:20px;
+   padding:5px;
+   left: 20px;
+   right: 20px;
+    text-align: center;
+    width: 83%;
+    margin: 0 auto;
+  }
+  .answer-body-text-wrapper{
+    position: relative;
   }
 }
 

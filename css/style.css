@@ -368,15 +368,32 @@
   text-align: left; }
   .answer-body img {
     width: min(50%, 300px); }
-  .answer-body .answer-body-text {
+  .answer-body .answer-body-text, .answer-body .answer-body-text2 {
     background: #fff;
-    padding: 20px;
+    padding: 20px 20px 12vh 20px;
     border-radius: 5px;
     font-size: clamp(1.8rem, 3vw, 2.4rem);
     color: #03056c;
     margin: 0 4vw;
     text-decoration: underline;
     text-align: justify; }
+    @media screen and (max-width: 812px) {
+      .answer-body .answer-body-text, .answer-body .answer-body-text2 {
+        padding-bottom: 12vh; } }
+  .answer-body .answer-body-text2 {
+    text-decoration: none;
+    background: linear-gradient(transparent 0, #d9f649 0);
+    display: inline-block;
+    position: absolute;
+    bottom: 20px;
+    padding: 5px;
+    left: 20px;
+    right: 20px;
+    text-align: center;
+    width: 83%;
+    margin: 0 auto; }
+  .answer-body .answer-body-text-wrapper {
+    position: relative; }
 
 .next_quiz_btn {
   position: absolute;
