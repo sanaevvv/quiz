@@ -104,15 +104,14 @@ const setUpQuiz = () => {
   }
   let btnText = document.getElementsByClassName('q-btn-txt');
 
-  console.log(quiz[quizIndex]);
   if (window.location.pathname.includes('/quiz/question.html')) {
     btnText[0].textContent = quiz[quizIndex].answers.A;
     btnText[1].textContent = quiz[quizIndex].answers.B;
     btnText[2].textContent = quiz[quizIndex].answers.C;
   }
 
-  if (quizIndex === quiz.length - 1) {
-    let t = document.getElementById("next_quiz_btn_img");
+  if (quiz.pop()) {
+    const t = document.getElementById("next_quiz_btn_img");
     t.src = "../img/point.png";
   }
 }
