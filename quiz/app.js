@@ -110,9 +110,9 @@ const setUpQuiz = () => {
     btnText[2].textContent = quiz[quizIndex].answers.C;
   }
 
-   if (quiz.slice(-1)[0]) {
+   if (quiz[quizIndex]===quiz.slice(-1)[0]) {
     let t = document.getElementById("next_quiz_btn_img");
-    if (t) {
+     if (t) {
       t.src = "../img/point.png";
     }
   }
@@ -150,7 +150,7 @@ const clickHandler = (e) => {
     music.volume = .1;
     music.play();
   }
-  setTimeout(() => location.href = "https://sanaevvv.github.io/quiz/quiz/answer.html?quizIndex=" + quizIndex+"&score="+score, 1500);
+  setTimeout(() => location.href = "./answer.html?quizIndex=" + quizIndex+"&score="+score, 1500);
 }
 
  // クリックしたら正誤判定する
@@ -182,7 +182,7 @@ window.onload = function () {
           count--;
         }
       } else {
-        location.href = "https://sanaevvv.github.io/quiz/quiz/answer.html?quizIndex=" + quizIndex + "&score=" + score;
+        location.href = "./answer.html?quizIndex=" + quizIndex + "&score=" + score;
       }
     }
     setInterval(timer, 1000);
@@ -195,10 +195,10 @@ const nextClickHandler = () => {
 
   if(quizIndex < quizLength) {
     setUpQuiz();
-    location.href = "https://sanaevvv.github.io/quiz/quiz/question.html?quizIndex=" + quizIndex + "&score=" + score;
+    location.href = "./question.html?quizIndex=" + quizIndex + "&score=" + score;
 
   } else {
-    location.href = "https://sanaevvv.github.io/quiz/quiz/point.html?score=" + score;
+    location.href = "./point.html?score=" + score;
   }
 }
 
