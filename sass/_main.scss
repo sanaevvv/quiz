@@ -45,10 +45,8 @@
 
     @include mq(tablet){
     display: grid;
-    height: 45%;
     align-items: center;
     margin: 0 auto;
-    bottom:0;
     }
 
   .q-btn-head{
@@ -81,7 +79,7 @@
       top: 45%;
     }
     @include mq(sp){
-      top: 40%;
+      top: 30%;
     }
 
     span{
@@ -90,7 +88,7 @@
      line-height: 75px;
      background: $main-color;
      color: #fff;
-     font-size: clamp(20px,4vw,46px);
+     font-size: clamp(30px,4vw,46px);
      @include mq(tablet-wide){
      width: 60px;
      height: 60px;
@@ -198,7 +196,7 @@
   transform: translate(-50%, -50%);
   @include mq(tablet){
     max-width: 490px;
-    top: 14%;
+    top: 15%;
   }
   @include mq(sp-wide){
     width: 95%
@@ -211,10 +209,10 @@
   .question-title{
     font-weight: bold;
     width: max-content;
-    padding: 20px 50px 5px;
+    padding: 20px 50px 0;
     margin: 0 auto -5px;
     position: relative;
-    font-size: 3.8rem;
+    font-size: clamp(3.2rem, 4vw, 3.8rem);
     color: $main-color;
     -webkit-text-stroke: 1.5px #cdeefd;
 
@@ -262,10 +260,12 @@
     font-size: 3rem;
     color: $sub-color;
     white-space: pre-wrap;
+    font-size: clamp(20px, 3vw, 34px);
     @include mq(tablet){
       width: 95%;
     left: 50%;
     transform: translate(-50%);
+     height: 30vh;
     }
   }
 }
@@ -283,7 +283,7 @@
   line-height: 60px;
   border-radius: 50%;
   color: #fff;
-  font-size: 3rem;
+  font-size: clamp(20px, 3vw, 30px);
   margin: 0 5px;
 }
 .circle{
@@ -339,26 +339,36 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  @include mq(sp){
+    top: 20px;
+  }
 
   .answer-title{
-    font-size: 300%;
+    font-size: clamp(26px, 4vw, 40px);
     color: $main-color;
     -webkit-text-stroke: 2px #fff;
     text-shadow: 2px 3px 3px $main-color;
+    @include mq(sp){
+      -webkit-text-stroke: 1.5px #fff;
+    }
   }
   .answer-text{
     color: $sub-color;
-    font-size: 200%;
     border-bottom: 7px solid #d9f649;
     padding-bottom: 5px;
-     @include mq(sp){
-       font-size: 160%;
-    }
+    font-size: clamp(18px, 4vw, 30px);
+    //  @include mq(sp){
+    // }
   }
   .answer-bg-pink{
     width: 70px;
     height: 70px;
     line-height: 70px;
+    @include mq(sp){
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+    }
   }
 }
 
@@ -375,44 +385,45 @@
 
 .answer-body{
   position: absolute;
-  top: 50%;
+  top: 49%;
   transform: translateY(-50%);
   left: 3%;
   right: 3%;
   z-index: 10;
   text-align: left;
-  @include mq(sp){
-    top: 54%;
-  }
+  // @include mq(sp){
+
+  // }
   img{
     width: min(50%, 300px);
   }
   .answer-body-text{
     background: #fff;
-    padding: 20px 20px 12vh 20px;
+    padding: 20px 20px 10vh 20px;
     border-radius: 5px;
-    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
     color: $sub-color;
     margin: 0 4vw;
     text-decoration: underline;
     text-align: justify;
-    @include mq(tablet-wide){
-      padding-bottom: 15vh;
+    @include mq(sp){
+     padding: 10px 10px 5vh 10px;
     }
   }
   .answer-body-text2{
    @extend.answer-body-text;
-   text-decoration: none;
-   background:linear-gradient(transparent 0,#d9f649 0);
-   display: inline-block;
-   position: absolute;
-   bottom:20px;
-   padding:5px;
-   left: 20px;
-   right: 20px;
+    text-decoration: none;
+    display: inline-block;
+    position: absolute;
+    bottom:20px;
+    padding:5px 0;
+    left: 4vw;
+    right: 4vw;
     text-align: center;
-    width: 83%;
     margin: 0 auto;
+    @include mq(sp){
+      bottom:0;
+    }
   }
   .answer-body-text-wrapper{
     position: relative;
@@ -422,9 +433,12 @@
 .next_quiz_btn{
   position: absolute;
   bottom: 12%;
-  width: 300px;
+  max-width: 300px;
   left: 50%;
   transform: translateX(-50%);
+  @include mq(sp){
+   bottom: 15%;
+  }
 }
 
 .final-head{
@@ -523,4 +537,15 @@
 }
 .yellow-line{
   background: linear-gradient(transparent 60%,#d9f649 60%);
+}
+.tag{
+  background: linear-gradient(transparent 0, #d9f649 0);
+  padding: 5px;
+  border-radius: 5px;
+  @include mq(sp){
+    padding: 3px;
+  }
+}
+.tag:not(:last-child){
+  margin-right: 5px;
 }

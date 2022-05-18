@@ -7,9 +7,9 @@ const quiz = [
       B: "必要な手続きをした人しかダメ",
       C: "投票所の人に聞いて大丈夫なら使える",
     },
-    correct: { C: "投票所の人に聞いて大丈夫なら使える"},
+    correct: { C: "投票所の人に聞いて大丈夫なら使える" },
     explanation: "投票所備えつけの鉛筆を必ず使わなければいけないわけではありません。ボールペンはインクがにじむ可能性があるので、鉛筆かシャープペンシルの使用を推奨しています。感染症対策で、使い捨てできるクリップペンシルプラスチックの軸の先に鉛筆の芯がついたものを導入する自治体もあります。",
-    explanation2:"#マイ鉛筆で投票   #実は持っていけるマイ鉛筆   #投票所の感染症対策"
+    explanation2: ["#マイ鉛筆で投票", "#実は持っていけるマイ鉛筆", "#投票所の感染症対策"]
   },
   {
     id: "2",
@@ -19,10 +19,10 @@ const quiz = [
       B: "プラスチックとしてリサイクルできる",
       C: "火をつけても燃えない"
     },
-    correct: { B : "プラスチックとしてリサイクルできる"},
+    correct: { B: "プラスチックとしてリサイクルできる" },
 
     explanation: "使い終わった投票用紙は、プラスチック製品としてリサイクルされうちわ、投票所の足元に引く養生シート、ポスター掲示板などに生まれ変わっています。また、投票用紙は折り畳んでも投票箱の中で自然に開くので開票作業がスムーズに行えます。しっとり滑らかな書き心地をぜひ投票所でお試しください。",
-    explanation2:"#投票用紙のナゾ   #投票用紙が大変身   #極上の書き味"
+    explanation2: ["#投票用紙のナゾ", "#投票用紙が大変身", "#極上の書き味"]
   },
   {
     id: "3",
@@ -32,10 +32,10 @@ const quiz = [
       B: "ツムギさんは入れる",
       C: "２人とも入れる"
     },
-    correct: { C: "２人とも入れる"},
+    correct: { C: "２人とも入れる" },
 
     explanation: "公職選挙法の改正で平成28年から、選挙人が投票所に同伴できる子どもの範囲が「幼児」から「18歳未満」に拡大されました。早い段階から投票所の雰囲気に触れてもらい 一票の大切さを学んでもらおうというものです。 ただし、大声で騒いだり、他の人の投票をのぞき見したりはしないでくださいね。",
-    explanation2: "#18歳未満でも入れるよ #親と一緒に行ってみた ＃一票の大切さを学ぼう"
+    explanation2: ["#18歳未満でも入れるよ", "#親と一緒に行ってみた", "＃一票の大切さを学ぼう"]
   },
   {
     id: "4",
@@ -48,7 +48,7 @@ const quiz = [
     correct: { A: "船" },
 
     explanation: "海に囲まれた島々では、自動車のほか「船舶」で選挙運動をすることもあります。実は東京都墨田区でも、川沿いに住宅が立ち並ぶエリアでは候補者が船上からアピールすることも。また、同じ車でもオープンカーでの選挙運動は公職選挙法で認められていません。",
-    explanation2:"#車だけじゃなかった   ＃東京でも見られるよ   ＃選挙っておもしろい"
+    explanation2: ["#車だけじゃなかった","＃東京でも見られるよ","＃選挙っておもしろい"]
   },
   {
     id: "5",
@@ -61,7 +61,7 @@ const quiz = [
     correct: { B : "電子国家 エストニア"},
 
     explanation: "人口約130万人のエストニアは、行政サービスのほとんどが電子化された、まさに電子政府の国。2005年に世界で初めて全国規模の選挙でネット投票を実施し、2019年の国会議員選挙では全投票の43.8%が電子投票システムによって投票されました。ちなみに、日本でも人工知能（AI）などを活用した国の特区「スーパーシティ構想」で、「インターネット投票」の実施を目標に掲げている自治体もあります。",
-    explanation2:"#ネット選挙   ＃便利そう   ＃世界で唯一"
+    explanation2:["#ネット選挙","＃便利そう","＃世界で唯一"]
   }
 ];
 
@@ -80,6 +80,10 @@ let elmJsAnswerText = document.getElementById('js-answer-text');
 let elmJsAnswer = document.getElementById('js-answer');
 let elmAnswerText = document.getElementById('answer-text');
 let elmAnswerText2 = document.getElementById('answer-text2');
+let elmTag1 = document.getElementById('tag1');
+let elmTag2 = document.getElementById('tag2');
+let elmTag3 = document.getElementById('tag3');
+
 
 if (elmJsAnswerText) {
   elmJsAnswerText.textContent = Object.values(quiz[quizIndex].correct);
@@ -93,7 +97,17 @@ if (elmAnswerText) {
   elmAnswerText.textContent = quiz[quizIndex].explanation;
 }
 if (elmAnswerText2) {
-  elmAnswerText2.textContent = quiz[quizIndex].explanation2;
+  elmAnswerText2.innerHTML = "";
+  elmAnswerText2.append(
+    ...quiz[quizIndex].explanation2.map((text) => {
+      const span = document.createElement('span');
+      span.textContent = text;
+      span.classList.add("tag");
+      return span;
+  }));
+  // elmTag1.textContent = quiz[quizIndex].explanation2[0];
+  // elmTag2.textContent = quiz[quizIndex].explanation2[1];
+  // elmTag3.textContent = quiz[quizIndex].explanation2[2];
 }
 
 const setUpQuiz = () => {
@@ -172,7 +186,7 @@ if (window.location.pathname.includes('/quiz/question.html')) {
 
 // カウントダウン
 window.onload = function () {
-  // let count = 15;
+  let count = 15;
 
     function timer() {
       if (count >= 0) {
@@ -194,9 +208,8 @@ const nextClickHandler = () => {
   quizIndex++;
 
   if(quizIndex < quizLength) {
-    setUpQuiz();
     location.href = "./question.html?quizIndex=" + quizIndex + "&score=" + score;
-
+    // setUpQuiz();
   } else {
     location.href = "./point.html?score=" + score;
   }
