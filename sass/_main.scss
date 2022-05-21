@@ -490,21 +490,25 @@
   right: 5%;
   display: flex;
   justify-content: space-between;
-   align-items: flex-end;
+   align-items: flex-start;
 }
 .final-finger{
   width: 15%;
-  @include mq(sp){
+  @include mq(sp-wide){
     width: 40%;
+    align-self: flex-end;
   }
 }
 .final-text{
   position: relative;
-  margin: 2em 0 2em 40px;
-  padding: 15px;
+  margin: 1em 0 2em 40px;
+  padding: 10px 5px;
   background: #fff;
   border-radius: 30px;
   border: 2px solid $sub-color;
+  @include mq(tablet){
+    margin: 1em 0 5.5em 10px;
+  }
   &::before{
     content: '';
   position: absolute;
@@ -527,7 +531,7 @@
   border: 2px solid $sub-color;
   }
   p{
-    padding: 10px 20px;
+    padding: 0px 20px;
     font-size:  clamp(2rem, 6vw, 3rem);
     color: $sub-color;
     @include mq(tablet){
@@ -548,4 +552,14 @@
 }
 .tag:not(:last-child){
   margin-right: 5px;
+}
+.challenge-btn{
+  position: absolute;
+  bottom: 30px;
+  right: 42px;
+  max-width: 350px;
+  @include mq(tablet){
+  left: 42px;
+  margin: 0 auto;
+  }
 }
