@@ -409,7 +409,7 @@
 
 .next_quiz_btn {
   position: absolute;
-  bottom: 12%;
+  bottom: 10%;
   max-width: 300px;
   left: 50%;
   transform: translateX(-50%); }
@@ -509,7 +509,7 @@
     color: #03056c; }
     @media screen and (max-width: 768px) {
       .final-text p {
-        padding: 10px 0; } }
+        padding: 0; } }
 
 .yellow-line {
   background: linear-gradient(transparent 60%, #d9f649 60%); }

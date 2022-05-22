@@ -432,7 +432,7 @@
 
 .next_quiz_btn{
   position: absolute;
-  bottom: 12%;
+  bottom: 10%;
   max-width: 300px;
   left: 50%;
   transform: translateX(-50%);
@@ -535,7 +535,7 @@
     font-size:  clamp(2rem, 6vw, 3rem);
     color: $sub-color;
     @include mq(tablet){
-      padding: 10px 0;
+      padding: 0;
     }
   }
 }
