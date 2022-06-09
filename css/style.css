@@ -88,13 +88,13 @@
       flex-wrap: wrap;
       top: 50%;
       column-gap: 10px;
-      row-gap: 20px; } }
+      row-gap: 15px; } }
   @media screen and (max-width: 608px) {
     .main-quiz-title {
-      top: 45%; } }
+      top: 40%; } }
   @media screen and (max-width: 480px) {
     .main-quiz-title {
-      top: 30%; } }
+      top: 35%; } }
   .main-quiz-title span {
     width: 75px;
     height: 75px;
@@ -107,6 +107,11 @@
         width: 60px;
         height: 60px;
         line-height: 60px; } }
+    @media screen and (max-width: 480px) {
+      .main-quiz-title span {
+        width: 55px;
+        height: 55px;
+        line-height: 55px; } }
 
 .q-btn-wrapper {
   position: relative;
@@ -258,7 +263,8 @@
     font-size: 3rem;
     color: #03056c;
     white-space: pre-wrap;
-    font-size: clamp(20px, 3vw, 34px); }
+    font-size: clamp(20px, 3vw, 34px);
+    text-align: left; }
     @media screen and (max-width: 768px) {
       .question .question-content {
         width: 95%;
@@ -333,9 +339,6 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap; }
-  @media screen and (max-width: 480px) {
-    .answer-head {
-      top: 20px; } }
   .answer-head .answer-title {
     font-size: clamp(26px, 4vw, 40px);
     color: #0260C3;
@@ -379,14 +382,17 @@
   text-align: left; }
   .answer-body img {
     width: min(50%, 300px); }
+  .answer-body .border {
+    background-image: linear-gradient(180deg, rgba(100, 100, 100, 0) 0%, rgba(100, 100, 100, 0) 98%, #646464 100%);
+    background-size: 100% 2em;
+    line-height: 2em;
+    padding: 0.2em 1em 0.2em 1em; }
   .answer-body .answer-body-text, .answer-body .answer-body-text2 {
-    background: #fff;
-    padding: 20px 20px 10vh 20px;
+    background-color: #fff;
     border-radius: 5px;
-    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
     color: #03056c;
     margin: 0 4vw;
-    text-decoration: underline;
     text-align: justify; }
     @media screen and (max-width: 480px) {
       .answer-body .answer-body-text, .answer-body .answer-body-text2 {
@@ -395,7 +401,6 @@
     text-decoration: none;
     display: inline-block;
     position: absolute;
-    bottom: 20px;
     padding: 5px 0;
     left: 4vw;
     right: 4vw;
@@ -404,8 +409,6 @@
     @media screen and (max-width: 480px) {
       .answer-body .answer-body-text2 {
         bottom: 0; } }
-  .answer-body .answer-body-text-wrapper {
-    position: relative; }
 
 .next_quiz_btn {
   position: absolute;
