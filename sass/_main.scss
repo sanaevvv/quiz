@@ -105,6 +105,9 @@
 .q-btn-wrapper{
   position: relative;
   height: 260px;
+  @include mq(sp) {
+    height: 220px;
+  }
   button{
     @include btnStyle;
     position: absolute;
@@ -345,6 +348,9 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  @include mq(sp){
+    top: 30px;
+  }
 
   .answer-title{
     font-size: clamp(26px, 4vw, 40px);
@@ -398,7 +404,7 @@
 
   // }
   img{
-    width: min(50%, 300px);
+    width: min(45%, 300px);
   }
   .border{
     background-image: linear-gradient(180deg, rgba(100, 100, 100, 0) 0%, rgba(100, 100, 100, 0) 98%, #646464 100%);
@@ -408,17 +414,19 @@
   }
   .answer-body-text{
     background-color: #fff;
-    border-radius: 5px;
-    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
     color: $sub-color;
     margin: 0 4vw;
     text-align: justify;
-    @include mq(sp){
-     padding: 10px 10px 5vh 10px;
-    }
   }
   .answer-body-text2{
    @extend.answer-body-text;
+   border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
     text-decoration: none;
     display: inline-block;
     position: absolute;
@@ -444,7 +452,7 @@
   left: 50%;
   transform: translateX(-50%);
   @include mq(sp){
-   bottom: 15%;
+   bottom: 13%;
   }
 }
 
@@ -568,5 +576,12 @@
   @include mq(tablet){
   left: 42px;
   margin: 0 auto;
+  }
+}
+
+.box-img{
+  max-width: 200px;
+  @include mq(sp){
+    width: 150px;
   }
 }

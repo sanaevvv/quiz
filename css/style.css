@@ -116,6 +116,9 @@
 .q-btn-wrapper {
   position: relative;
   height: 260px; }
+  @media screen and (max-width: 480px) {
+    .q-btn-wrapper {
+      height: 220px; } }
   .q-btn-wrapper button {
     background: transparent;
     border: none;
@@ -339,6 +342,9 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap; }
+  @media screen and (max-width: 480px) {
+    .answer-head {
+      top: 30px; } }
   .answer-head .answer-title {
     font-size: clamp(26px, 4vw, 40px);
     color: #0260C3;
@@ -381,7 +387,7 @@
   z-index: 10;
   text-align: left; }
   .answer-body img {
-    width: min(50%, 300px); }
+    width: min(45%, 300px); }
   .answer-body .border {
     background-image: linear-gradient(180deg, rgba(100, 100, 100, 0) 0%, rgba(100, 100, 100, 0) 98%, #646464 100%);
     background-size: 100% 2em;
@@ -389,15 +395,17 @@
     padding: 0.2em 1em 0.2em 1em; }
   .answer-body .answer-body-text, .answer-body .answer-body-text2 {
     background-color: #fff;
-    border-radius: 5px;
-    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
     color: #03056c;
     margin: 0 4vw;
     text-align: justify; }
-    @media screen and (max-width: 480px) {
-      .answer-body .answer-body-text, .answer-body .answer-body-text2 {
-        padding: 10px 10px 5vh 10px; } }
   .answer-body .answer-body-text2 {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
     text-decoration: none;
     display: inline-block;
     position: absolute;
@@ -418,7 +426,7 @@
   transform: translateX(-50%); }
   @media screen and (max-width: 480px) {
     .next_quiz_btn {
-      bottom: 15%; } }
+      bottom: 13%; } }
 
 .final-head {
   position: absolute;
@@ -537,6 +545,12 @@
     .challenge-btn {
       left: 42px;
       margin: 0 auto; } }
+
+.box-img {
+  max-width: 200px; }
+  @media screen and (max-width: 480px) {
+    .box-img {
+      width: 150px; } }
 
 html {
   box-sizing: border-box;
