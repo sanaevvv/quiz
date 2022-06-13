@@ -423,7 +423,9 @@
     color: $sub-color;
     margin: 0 1vw;
     text-align: justify;
-    letter-spacing: -0.03em;
+    @include mq(sp){
+      letter-spacing: -0.01em;
+    }
   }
   .answer-body-text2{
    @extend.answer-body-text;

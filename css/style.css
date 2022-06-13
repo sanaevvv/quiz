@@ -407,8 +407,10 @@
     font-size: clamp(1.6rem, 3vw, 2.2rem);
     color: #03056c;
     margin: 0 1vw;
-    text-align: justify;
-    letter-spacing: -0.03em; }
+    text-align: justify; }
+    @media screen and (max-width: 480px) {
+      .answer-body .answer-body-text, .answer-body .answer-body-text2 {
+        letter-spacing: -0.01em; } }
   .answer-body .answer-body-text2 {
     border-top-right-radius: 0;
     border-top-left-radius: 0;
