@@ -209,9 +209,6 @@
   @include mq(sp-wide){
     width: 95%
   }
-  @include mq(sp){
-    // width: 90%
-  }
 
 
   .question-title{
@@ -367,8 +364,6 @@
     border-bottom: 7px solid #d9f649;
     padding-bottom: 5px;
     font-size: clamp(18px, 4vw, 30px);
-    //  @include mq(sp){
-    // }
   }
   .answer-bg-pink{
     width: 70px;
@@ -420,7 +415,7 @@
     border-top-left-radius: 5px;
     font-size: clamp(1.6rem, 3vw, 2.2rem);
     color: $sub-color;
-    margin: 0 4vw;
+    margin: 0 1vw;
     text-align: justify;
   }
   .answer-body-text2{
@@ -433,8 +428,8 @@
     display: inline-block;
     position: absolute;
     padding:5px 0;
-    left: 4vw;
-    right: 4vw;
+    left: 1vw;
+    right: 1vw;
     text-align: center;
     margin: 0 auto;
   }
