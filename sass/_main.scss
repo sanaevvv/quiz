@@ -359,6 +359,7 @@
     text-shadow: 2px 3px 3px $main-color;
     @include mq(sp){
       -webkit-text-stroke: 1px #fff;
+      text-shadow: 1px 1px 2px $main-color
     }
   }
   .answer-text{
