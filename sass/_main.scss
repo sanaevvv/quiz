@@ -447,11 +447,12 @@
 .next_quiz_btn{
   position: absolute;
   bottom: 10%;
+  z-index: 100;
   max-width: 300px;
   left: 50%;
   transform: translateX(-50%);
   @include mq(sp){
-   bottom: 11%;
+   bottom: 13%;
    width: 200px;
   }
 }
