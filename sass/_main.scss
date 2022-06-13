@@ -358,7 +358,7 @@
     -webkit-text-stroke: 2px #fff;
     text-shadow: 2px 3px 3px $main-color;
     @include mq(sp){
-      -webkit-text-stroke: 1.5px #fff;
+      -webkit-text-stroke: 1px #fff;
     }
   }
   .answer-text{
@@ -400,6 +400,7 @@
   right: 3%;
   z-index: 10;
   text-align: left;
+  height: 60%;
   // @include mq(sp){
 
   // }
@@ -435,9 +436,6 @@
     right: 4vw;
     text-align: center;
     margin: 0 auto;
-    @include mq(sp){
-      bottom:0;
-    }
   }
   .answer-body-text-wrapper{
     // position: relative;
@@ -453,6 +451,7 @@
   transform: translateX(-50%);
   @include mq(sp){
    bottom: 13%;
+   width: 200px;
   }
 }
 
@@ -562,7 +561,7 @@
   padding: 5px;
   border-radius: 5px;
   @include mq(sp){
-    padding: 3px;
+    padding: 2px;
   }
 }
 .tag:not(:last-child){
